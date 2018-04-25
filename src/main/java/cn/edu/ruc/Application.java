@@ -1,6 +1,7 @@
 package cn.edu.ruc;
 
-import cn.edu.ruc.secondAOP.PersonProxyFactory;
+import cn.edu.ruc.CGLib.Person;
+import cn.edu.ruc.jdkAOP.PersonProxyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -41,6 +42,17 @@ public class Application {
             Speakable jdkProxy = PersonProxyFactory.newJdkProxy();
             jdkProxy.sayHi();
             jdkProxy.sayBye();
+        };
+    }
+
+    @Bean
+    public CommandLineRunner commandLineRunner3(ApplicationContext ctx){
+        return args -> {
+            // cglib dynamic proxy
+            System.out.println("******** cglib proxy ******** ");
+            Person cglibProxy = PersonProxyFactory.newCglibProxy();
+            cglibProxy.sayHi();
+            cglibProxy.sayBye();
         };
     }
 }

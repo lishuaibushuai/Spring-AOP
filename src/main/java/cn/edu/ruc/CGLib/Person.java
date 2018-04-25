@@ -1,14 +1,11 @@
-package cn.edu.ruc.secondAOP;
-
-import cn.edu.ruc.Speakable;
+package cn.edu.ruc.CGLib;
 
 /**
  * @Author: Lishuai
  * @Date: Created on 2018/4/25
  */
-public class PersonImpl implements Speakable{
+public class Person {
 
-    @Override
     public void sayHi() {
         try {
             Thread.currentThread().sleep(30);
@@ -18,7 +15,6 @@ public class PersonImpl implements Speakable{
         System.out.println("Hi!!");
     }
 
-    @Override
     public void sayBye() {
         try {
             Thread.currentThread().sleep(10);

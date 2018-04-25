@@ -1,4 +1,4 @@
-package cn.edu.ruc.secondAOP;
+package cn.edu.ruc.jdkAOP;
 
 import cn.edu.ruc.springAOP.MonitorSession;
 

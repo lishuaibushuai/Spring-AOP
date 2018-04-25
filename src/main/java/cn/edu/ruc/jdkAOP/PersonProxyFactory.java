@@ -1,5 +1,7 @@
-package cn.edu.ruc.secondAOP;
+package cn.edu.ruc.jdkAOP;
 
+import cn.edu.ruc.CGLib.CGLibProxy;
+import cn.edu.ruc.CGLib.Person;
 import cn.edu.ruc.Speakable;
 
 /**
@@ -12,6 +14,12 @@ public class PersonProxyFactory {
         // 代理PersonImpl
         DynamicProxy dynamicProxy = new DynamicProxy(new PersonImpl());
         Speakable proxy = dynamicProxy.getProxy();
+        return proxy;
+    }
+
+    public static Person newCglibProxy() {
+        CGLibProxy cglibProxy = CGLibProxy.getInstance();
+        Person proxy = cglibProxy.getProxy(Person.class);
         return proxy;
     }
 }
