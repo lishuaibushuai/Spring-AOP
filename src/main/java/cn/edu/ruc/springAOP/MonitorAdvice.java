@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MonitorAdvice {
 
-    @Pointcut("execution (* cn.edu.ruc.springAOP.Speakable.*(..))")
+    @Pointcut("execution (* cn.edu.ruc.Speakable.*(..))")
     public void pointcut() {
     }
 

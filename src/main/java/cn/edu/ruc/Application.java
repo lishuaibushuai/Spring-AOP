@@ -1,6 +1,6 @@
 package cn.edu.ruc;
 
-import cn.edu.ruc.springAOP.Speakable;
+import cn.edu.ruc.secondAOP.PersonProxyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,7 +23,7 @@ public class Application {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+    public CommandLineRunner commandLineRunner1(ApplicationContext ctx) {
         return args -> {
             // spring aop
             System.out.println("******** spring aop ******** ");
@@ -33,4 +33,14 @@ public class Application {
         };
     }
 
+    @Bean
+    public CommandLineRunner commandLineRunner2(ApplicationContext ctx) {
+        return args -> {
+            // jdk dynamic proxy
+            System.out.println("******** jdk dynamic proxy ******** ");
+            Speakable jdkProxy = PersonProxyFactory.newJdkProxy();
+            jdkProxy.sayHi();
+            jdkProxy.sayBye();
+        };
+    }
 }

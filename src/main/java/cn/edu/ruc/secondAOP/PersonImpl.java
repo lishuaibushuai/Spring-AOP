@@ -1,15 +1,13 @@
-package cn.edu.ruc.springAOP;
-
+package cn.edu.ruc.secondAOP;
 
 import cn.edu.ruc.Speakable;
-import org.springframework.stereotype.Service;
 
 /**
  * @Author: Lishuai
  * @Date: Created on 2018/4/25
  */
-@Service
-public class PersonSpring implements Speakable {
+public class PersonImpl implements Speakable{
+
     @Override
     public void sayHi() {
         try {
